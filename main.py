@@ -1,4 +1,5 @@
 from random import choice
+from art import logo
 
 
 def card_picker():
@@ -92,6 +93,7 @@ def black_jack():
                 compare(player_cards, dealer_cards)
 
 
+print(logo)
 print("Welcome! Let's Play Black Jack!")
 
 
