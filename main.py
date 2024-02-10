@@ -3,6 +3,7 @@ from art import logo
 
 
 def card_picker():
+    """Picks a random card from the cards list"""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     random_card = choice(cards)
     return random_card
