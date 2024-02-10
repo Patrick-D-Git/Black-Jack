@@ -10,6 +10,7 @@ def card_picker():
 
 
 def add_card(card_list):
+    """checks the card if it's an ace and do some logic before it adds to the card list"""
     card_to_add = int(card_picker())
     if card_to_add == 11 and sum(card_list) > 10:
         card_to_add = 1
@@ -18,6 +19,7 @@ def add_card(card_list):
 
 
 def card_check(card_list):
+    """Checks the sum of the cards to know if you hit black jack, went over, or is good to add"""
     if sum(card_list) == 21:
         print("Black Jack! You Won!")
         return False
@@ -29,6 +31,7 @@ def card_check(card_list):
 
 
 def dealer_card_check(card_list):
+    """checks the dealers sum of cards and goes through the condition"""
     while sum(card_list) < 17:
         card_list.append(card_picker())
     if sum(card_list) == 21:
@@ -43,7 +46,7 @@ def dealer_card_check(card_list):
 
 
 def first_cards(card_list):
-
+    """adds two random cards to the card list"""
     for first_two_cards in range(2):
         random_card = card_picker()
         if random_card == 11 and sum(card_list) > 10:
@@ -52,7 +55,7 @@ def first_cards(card_list):
 
 
 def compare(player_score, dealer_score):
-
+    """compares user cards against dealer cards and determine who wins"""
     if dealer_card_check(dealer_score):
 
         if sum(player_score) == sum(dealer_score):
@@ -67,6 +70,7 @@ def compare(player_score, dealer_score):
 
 
 def black_jack():
+    """activate and starts the game"""
     player_cards = []
     dealer_cards = []
 
